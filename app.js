@@ -58,7 +58,7 @@ app.use(function(err, req, res, next) {
 
 
 mongoose
-	.connect("mongodb://localhost:27017", {
+	.connect(process.env.MONGO, {
 		useCreateIndex: true,
 		useNewUrlParser: true,
 		useFindAndModify: false,

@@ -63,14 +63,14 @@ exports.login = async (request, response) => {
         if (!email || !password) throw new Error("email or password are required")
 
         const user = await loginWithEmail(email, password)
-        console.log(user)
+        console.log("user ogekao", user)
         const token = await generateToken(user)
 
         response.status(200).json({
             status: "success",
             data: { user, token }
         })
-
+ 
 
     } catch (error) {
         response.status(400).json({
